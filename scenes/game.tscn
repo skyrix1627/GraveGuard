@@ -1080,11 +1080,16 @@ sources/0 = SubResource("TileSetAtlasSource_lbhrr")
 [node name="Game" type="Node2D" unique_id=809155825]
 
 [node name="Player" parent="." unique_id=1489929400 instance=ExtResource("1_uwrxv")]
+z_index = 2
 position = Vector2(148, 154)
 
 [node name="Camera2D" type="Camera2D" parent="Player" unique_id=1759294387]
 zoom = Vector2(3, 3)
 position_smoothing_enabled = true
+
+[node name="AnimatedSprite2D2" type="AnimatedSprite2D" parent="Player" unique_id=235278856]
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Player" unique_id=2046943621]
 
 [node name="TileMap" type="TileMap" parent="." unique_id=1708168474]
 y_sort_enabled = true

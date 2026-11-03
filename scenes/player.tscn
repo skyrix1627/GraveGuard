@@ -1,26 +1,26 @@
 [gd_scene format=3 uid="uid://dvlip4jt4knlc"]
 
 [ext_resource type="Script" uid="uid://0jdm36d812ds" path="res://scripts/movement.gd" id="1_g2els"]
-[ext_resource type="Texture2D" uid="uid://k60dll0sqv8g" path="res://assets/sprites/playerLeftCollection.png" id="2_qhqgy"]
 [ext_resource type="Texture2D" uid="uid://dmfhi5i8xtpbb" path="res://assets/sprites/playerRightCollection.png" id="3_dqkch"]
+[ext_resource type="Texture2D" uid="uid://k60dll0sqv8g" path="res://assets/sprites/playerLeftCollection.png" id="3_qlg0r"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_yqjtg"]
 size = Vector2(12, 9)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_qlg0r"]
-atlas = ExtResource("2_qhqgy")
+atlas = ExtResource("3_qlg0r")
 region = Rect2(59, 0, 59, 96)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_tuyoq"]
-atlas = ExtResource("2_qhqgy")
+atlas = ExtResource("3_qlg0r")
 region = Rect2(118, 0, 59, 96)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_fjrip"]
-atlas = ExtResource("2_qhqgy")
+atlas = ExtResource("3_qlg0r")
 region = Rect2(0, 96, 59, 96)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_smehm"]
-atlas = ExtResource("2_qhqgy")
+atlas = ExtResource("3_qlg0r")
 region = Rect2(0, 0, 59, 96)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_ur7pv"]
@@ -83,6 +83,7 @@ script = ExtResource("1_g2els")
 position = Vector2(-3, 36.5)
 shape = SubResource("RectangleShape2D_yqjtg")
 
-[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1650926126]
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=867738163]
+scale = Vector2(0.35, 0.35)
 sprite_frames = SubResource("SpriteFrames_dkgtv")
 animation = &"leftWalking"

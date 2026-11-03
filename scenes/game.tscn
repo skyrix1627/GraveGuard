@@ -1079,18 +1079,6 @@ sources/0 = SubResource("TileSetAtlasSource_lbhrr")
 
 [node name="Game" type="Node2D" unique_id=809155825]
 
-[node name="Player" parent="." unique_id=1489929400 instance=ExtResource("1_uwrxv")]
-z_index = 2
-position = Vector2(148, 154)
-
-[node name="Camera2D" type="Camera2D" parent="Player" unique_id=1759294387]
-zoom = Vector2(3, 3)
-position_smoothing_enabled = true
-
-[node name="AnimatedSprite2D2" type="AnimatedSprite2D" parent="Player" unique_id=235278856]
-
-[node name="AnimationPlayer" type="AnimationPlayer" parent="Player" unique_id=2046943621]
-
 [node name="TileMap" type="TileMap" parent="." unique_id=1708168474]
 y_sort_enabled = true
 tile_set = SubResource("TileSet_4i757")
@@ -1109,3 +1097,11 @@ layer_0/tile_data = PackedInt32Array(65536, 393216, 20, 65537, 458752, 20, 65538
 tile_set = SubResource("TileSet_5hvud")
 format = 2
 layer_0/tile_data = PackedInt32Array(524293, 786432, 7, 786449, 1048576, 9, 786444, 524288, 9)
+
+[node name="Player" parent="." unique_id=1489929400 instance=ExtResource("1_uwrxv")]
+z_index = 2
+position = Vector2(159, 153)
+
+[node name="Camera2D" type="Camera2D" parent="Player" unique_id=740775175]
+zoom = Vector2(3, 3)
+position_smoothing_enabled = true

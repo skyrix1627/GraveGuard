@@ -1,19 +1,140 @@
 [gd_scene format=3 uid="uid://dvlip4jt4knlc"]
 
-[ext_resource type="Script" uid="uid://0jdm36d812ds" path="res://scripts/movement.gd" id="1_g2els"]
+[ext_resource type="Texture2D" uid="uid://k60dll0sqv8g" path="res://assets/sprites/playerLeftCollection.png" id="2_dqkch"]
 [ext_resource type="Texture2D" uid="uid://b7ca1arfno1eq" path="res://assets/sprites/player.png" id="2_qhqgy"]
+[ext_resource type="Texture2D" uid="uid://dmfhi5i8xtpbb" path="res://assets/sprites/playerRightCollection.png" id="3_dqkch"]
+
+[sub_resource type="GDScript" id="GDScript_g2els"]
+script/source = "extends CharacterBody2D
+
+@export var speed = 400
+#var screen_size
+
+# Called when the node enters the scene tree for the first time.
+#func _ready() -> void:
+	#screen_size = get_viewport_rect().size
+
+
+# Called every frame. 'delta' is the elapsed time since the previous frame. : float) -> void:
+func _process(delta):
+	var velocity = Vector2.ZERO #move vector
+	if Input.is_action_pressed(\"move_right\"):
+		velocity.x += 1
+	if Input.is_action_pressed(\"move_left\"):
+		velocity.x -= 1
+	if Input.is_action_pressed(\"move_down\"):
+		velocity.y += 1
+	if Input.is_action_pressed(\"move_up\"):
+		velocity.y -= 1
+	
+	if velocity.length() > 0:
+		velocity = velocity.normalized() * speed
+		$AnimatedSprite2D.play()
+	else:
+		$AnimatedSprite2D.stop()
+	
+	position += velocity * delta
+	#position = position.clamp(Vector2.ZERO, screen_size)
+		
+	if velocity.x != 0:
+		#$AnimatedSprite2D.animation = \"walk\"
+		$AnimatedSprite2D.flip_v = false
+		$AnimatedSprite2D.flip_h = velocity.x < 0
+"
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_yqjtg"]
-size = Vector2(12, 9)
+size = Vector2(11, 9)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_jej6c"]
+atlas = ExtResource("2_qhqgy")
+region = Rect2(0, 0, 59, 96)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_qlg0r"]
+atlas = ExtResource("2_dqkch")
+region = Rect2(59, 0, 59, 96)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_tuyoq"]
+atlas = ExtResource("2_dqkch")
+region = Rect2(118, 0, 59, 96)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_fjrip"]
+atlas = ExtResource("2_dqkch")
+region = Rect2(0, 96, 59, 96)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_smehm"]
+atlas = ExtResource("2_dqkch")
+region = Rect2(0, 0, 59, 96)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ur7pv"]
+atlas = ExtResource("3_dqkch")
+region = Rect2(0, 96, 59, 96)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_y4r1p"]
+atlas = ExtResource("3_dqkch")
+region = Rect2(118, 0, 59, 96)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_d2wvv"]
+atlas = ExtResource("3_dqkch")
+region = Rect2(59, 0, 59, 96)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_3v2ag"]
+atlas = ExtResource("3_dqkch")
+region = Rect2(0, 0, 59, 96)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_dkgtv"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_jej6c")
+}],
+"loop": 1,
+"name": &"idle",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_qlg0r")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_tuyoq")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_fjrip")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_smehm")
+}],
+"loop": 1,
+"name": &"leftWalking",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ur7pv")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_y4r1p")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_d2wvv")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_3v2ag")
+}],
+"loop": 1,
+"name": &"rightWalking",
+"speed": 5.0
+}]
 
 [node name="Player" type="CharacterBody2D" unique_id=1489929400]
-script = ExtResource("1_g2els")
-
-[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1846943590]
-z_index = 2
-position = Vector2(-3, 15)
-texture = ExtResource("2_qhqgy")
+script = SubResource("GDScript_g2els")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1978964934]
-position = Vector2(-3, 36.5)
+position = Vector2(0.5, 15)
 shape = SubResource("RectangleShape2D_yqjtg")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1650926126]
+scale = Vector2(0.4, 0.4)
+sprite_frames = SubResource("SpriteFrames_dkgtv")
+animation = &"leftWalking"
+frame_progress = 0.54562396

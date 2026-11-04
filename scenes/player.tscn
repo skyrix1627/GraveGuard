@@ -106,7 +106,7 @@ animations = [{
 }],
 "loop": 1,
 "name": &"leftWalking",
-"speed": 10.0
+"speed": 5.0
 }, {
 "frames": [{
 "duration": 1.0,
@@ -134,7 +134,7 @@ position = Vector2(0.5, 15)
 shape = SubResource("RectangleShape2D_yqjtg")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1650926126]
-scale = Vector2(0.4, 0.4)
+scale = Vector2(0.2, 0.2)
 sprite_frames = SubResource("SpriteFrames_dkgtv")
 animation = &"leftWalking"
 frame_progress = 0.54562396

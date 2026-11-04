@@ -26,8 +26,6 @@ func _process(delta):
 		velocity.y += 1
 	if Input.is_action_pressed(\"move_up\"):
 		velocity.y -= 1
-		
-
 	
 	if velocity.length() > 0:
 		velocity = velocity.normalized() * speed
@@ -36,15 +34,16 @@ func _process(delta):
 		$AnimatedSprite2D.stop()
 	
 	position += velocity * delta
+	#position = position.clamp(Vector2.ZERO, screen_size)
 		
 	if velocity.x != 0:
-		$AnimatedSprite2D.animation = \"leftWalking\"
+		#$AnimatedSprite2D.animation = \"walk\"
 		$AnimatedSprite2D.flip_v = false
 		$AnimatedSprite2D.flip_h = velocity.x < 0
 "
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_yqjtg"]
-size = Vector2(10, 9)
+size = Vector2(11, 9)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_jej6c"]
 atlas = ExtResource("2_qhqgy")
@@ -107,7 +106,7 @@ animations = [{
 }],
 "loop": 1,
 "name": &"leftWalking",
-"speed": 5.0
+"speed": 10.0
 }, {
 "frames": [{
 "duration": 1.0,
@@ -128,13 +127,25 @@ animations = [{
 }]
 
 [node name="Player" type="CharacterBody2D" unique_id=1489929400]
+y_sort_enabled = true
 script = SubResource("GDScript_g2els")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1978964934]
-position = Vector2(0, 15)
+<<<<<<< Updated upstream
+position = Vector2(0.5, 15)
+=======
+position = Vector2(0, -1)
+>>>>>>> Stashed changes
 shape = SubResource("RectangleShape2D_yqjtg")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1650926126]
+position = Vector2(0, -2.3841858e-07)
 scale = Vector2(0.4, 0.4)
 sprite_frames = SubResource("SpriteFrames_dkgtv")
+<<<<<<< Updated upstream
+animation = &"leftWalking"
+frame_progress = 0.54562396
+=======
 animation = &"idle"
+offset = Vector2(0, -40)
+>>>>>>> Stashed changes

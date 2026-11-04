@@ -127,14 +127,25 @@ animations = [{
 }]
 
 [node name="Player" type="CharacterBody2D" unique_id=1489929400]
+y_sort_enabled = true
 script = SubResource("GDScript_g2els")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1978964934]
+<<<<<<< Updated upstream
 position = Vector2(0.5, 15)
+=======
+position = Vector2(0, -1)
+>>>>>>> Stashed changes
 shape = SubResource("RectangleShape2D_yqjtg")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1650926126]
+position = Vector2(0, -2.3841858e-07)
 scale = Vector2(0.4, 0.4)
 sprite_frames = SubResource("SpriteFrames_dkgtv")
+<<<<<<< Updated upstream
 animation = &"leftWalking"
 frame_progress = 0.54562396
+=======
+animation = &"idle"
+offset = Vector2(0, -40)
+>>>>>>> Stashed changes

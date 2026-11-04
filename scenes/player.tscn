@@ -8,7 +8,7 @@
 [sub_resource type="GDScript" id="GDScript_g2els"]
 script/source = "extends CharacterBody2D
 
-@export var speed = 400
+@export var speed: int
 
 var is_attacking: bool = false
 var hitbox_offset: Vector2
@@ -193,6 +193,7 @@ radius = 8.0
 
 [node name="Player" type="CharacterBody2D" unique_id=1489929400]
 script = SubResource("GDScript_g2els")
+speed = 125
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1978964934]
 position = Vector2(0, 15)

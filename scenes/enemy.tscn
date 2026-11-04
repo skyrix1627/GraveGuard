@@ -30,3 +30,4 @@ position = Vector2(7, 8)
 shape = SubResource("CircleShape2D_5hvud")
 
 [connection signal="body_entered" from="Sight" to="." method="_on_sight_body_entered"]
+[connection signal="body_exited" from="Sight" to="." method="_on_sight_body_exited"]

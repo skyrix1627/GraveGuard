@@ -1686,7 +1686,7 @@ layer_0/tile_data = PackedInt32Array(-1769470, 589824, 26, -1703934, 589824, 27,
 tile_set = SubResource("TileSet_butnq")
 format = 2
 layer_0/z_index = 2
-layer_0/tile_data = PackedInt32Array(-393235, 0, 0, -917481, 1, 0, -917465, 2, 0, -917457, 4, 0, -917473, 5, 0, -131049, 1, 805306368, -131041, 1, 805306368, -131033, 1, 805306368, -131025, 1, 805306368)
+layer_0/tile_data = PackedInt32Array(-393235, 0, 0, -917481, 1, 0, -917465, 2, 0, -917457, 4, 0, -917473, 5, 0)
 
 [node name="Trees" type="TileMap" parent="." unique_id=551693365]
 tile_set = SubResource("TileSet_5hvud")

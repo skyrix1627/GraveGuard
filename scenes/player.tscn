@@ -249,6 +249,7 @@ radius = 6.0
 height = 26.0
 
 [node name="Player" type="CharacterBody2D" unique_id=1489929400]
+position = Vector2(6, 0)
 script = SubResource("GDScript_g2els")
 speed = 125
 
@@ -260,7 +261,7 @@ shape = SubResource("RectangleShape2D_yqjtg")
 position = Vector2(0, -9.999999)
 scale = Vector2(0.2, 0.2)
 sprite_frames = SubResource("SpriteFrames_dkgtv")
-animation = &"tempAttacking"
+animation = &"downWalking"
 
 [node name="hitBoxBaton" type="Area2D" parent="." unique_id=1386756528]
 position = Vector2(10, -10)

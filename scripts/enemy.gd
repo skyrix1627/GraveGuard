@@ -31,6 +31,8 @@ func take_damage(damage: int, attacker_position: Vector2) -> void:
 
 func _die() -> void:
 	queue_free()
+	Global.kills += 1
+	Global.euro += 1 * Global.wave_multiplier
 
 func _on_sight_body_entered(body: Node2D) -> void:
 	if body.name == "Player":

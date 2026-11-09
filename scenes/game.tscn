@@ -981,16 +981,6 @@ physics_layer_0/collision_layer = 1
 sources/5 = SubResource("TileSetAtlasSource_kvpfn")
 sources/6 = SubResource("TileSetAtlasSource_ca42v")
 
-[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_iywne"]
-texture = ExtResource("2_yqjtg")
-0:0/0 = 0
-0:1/0 = 0
-1:0/0 = 0
-1:1/0 = 0
-
-[sub_resource type="TileSet" id="TileSet_gl52s"]
-sources/0 = SubResource("TileSetAtlasSource_iywne")
-
 [node name="Game" type="Node2D" unique_id=809155825]
 y_sort_enabled = true
 
@@ -1049,9 +1039,6 @@ position = Vector2(-300, -37)
 [node name="Camera2D" type="Camera2D" parent="Player" unique_id=740775175]
 zoom = Vector2(3, 3)
 position_smoothing_enabled = true
-
-[node name="TileMapLayer" type="TileMapLayer" parent="." unique_id=993370120]
-tile_set = SubResource("TileSet_gl52s")
 
 [node name="Enemy" parent="." unique_id=662385942 instance=ExtResource("12_dinhu")]
 position = Vector2(-381, 2)

@@ -1,8 +1,10 @@
 extends CharacterBody2D
 
 
-var SPEED = 100.0
+const  SPEED: int = 100.0
+const 	KNOCKBACK_FORCE: int = 50
 
+var health: int = 100
 var target = null
 
 func _physics_process(delta: float) -> void:
@@ -12,6 +14,17 @@ func _physics_process(delta: float) -> void:
 func _attack(delta: float) -> void:
 	var direction = (target.position - position).normalized()
 	position += direction * SPEED * delta
+	
+func take_damage(damage: int, attacker_position: Vector2) -> void:
+	health -= damage
+	print(health)
+	var knockback_direction = (position - attacker_position).normalized()
+	var target_position = position + knockback_direction * KNOCKBACK_FORCE
+	
+	var tween = create_tween()
+	tween.set_ease(Tween.EASE_OUT)
+	tween.set_trans(Tween.TRANS_CUBIC)
+	tween.tween_property(self, "position", target_position, 0.5)
 
 func _on_sight_body_entered(body: Node2D) -> void:
 	if body.name == "Player":

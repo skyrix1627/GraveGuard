@@ -3,6 +3,21 @@
 [ext_resource type="Texture2D" uid="uid://r6140u7tjrsx" path="res://icon.svg" id="1_7p1mj"]
 [ext_resource type="Script" uid="uid://e5f5pmr8sst2" path="res://scripts/enemy.gd" id="1_md0e3"]
 
+[sub_resource type="AtlasTexture" id="AtlasTexture_md0e3"]
+atlas = ExtResource("1_7p1mj")
+region = Rect2(0, 0, 128, 128)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_5hvud"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_md0e3")
+}],
+"loop": 1,
+"name": &"idle",
+"speed": 5.0
+}]
+
 [sub_resource type="CircleShape2D" id="CircleShape2D_73dut"]
 radius = 8.0
 
@@ -14,19 +29,18 @@ collision_layer = 2
 collision_mask = 0
 script = ExtResource("1_md0e3")
 
-[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1087805839]
-position = Vector2(6.999999, 6.9999995)
-scale = Vector2(0.101562485, 0.09765625)
-texture = ExtResource("1_7p1mj")
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1085332659]
+position = Vector2(0, -1.9073486e-06)
+scale = Vector2(0.12500001, 0.12500001)
+sprite_frames = SubResource("SpriteFrames_5hvud")
+animation = &"idle"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1884046417]
-position = Vector2(7, 7)
 shape = SubResource("CircleShape2D_73dut")
 
 [node name="Sight" type="Area2D" parent="." unique_id=1732230395]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Sight" unique_id=1515960062]
-position = Vector2(7, 8)
 shape = SubResource("CircleShape2D_5hvud")
 
 [connection signal="body_entered" from="Sight" to="." method="_on_sight_body_entered"]

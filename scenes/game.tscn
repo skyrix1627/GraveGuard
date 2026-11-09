@@ -11,6 +11,7 @@
 [ext_resource type="Texture2D" uid="uid://c6elwn6o8k7ra" path="res://assets/sprites/mixedBuilding4.png" id="6_kvpfn"]
 [ext_resource type="Texture2D" uid="uid://7qo8p8x2g21c" path="res://assets/sprites/scoop.png" id="8_vtaks"]
 [ext_resource type="Texture2D" uid="uid://cp41dvkwvo1ro" path="res://assets/sprites/Buildings.png" id="9_kvpfn"]
+[ext_resource type="PackedScene" uid="uid://cmvmoocc053g4" path="res://scenes/enemy.tscn" id="12_dinhu"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_p57ef"]
 texture = ExtResource("2_yqjtg")
@@ -1738,3 +1739,6 @@ position_smoothing_enabled = true
 
 [node name="TileMapLayer" type="TileMapLayer" parent="." unique_id=993370120]
 tile_set = SubResource("TileSet_gl52s")
+
+[node name="Enemy" parent="." unique_id=662385942 instance=ExtResource("12_dinhu")]
+position = Vector2(-381, 2)

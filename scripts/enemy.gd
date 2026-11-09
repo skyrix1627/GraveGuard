@@ -1,7 +1,5 @@
 extends CharacterBody2D
 
-
-const  SPEED: int = 100.0
 const 	KNOCKBACK_FORCE: int = 50
 
 var health: int = 100
@@ -13,7 +11,7 @@ func _physics_process(delta: float) -> void:
 
 func _attack(delta: float) -> void:
 	var direction = (target.position - position).normalized()
-	position += direction * SPEED * delta
+	position += direction * Global.enemy_speed * delta
 	
 func take_damage(damage: int, attacker_position: Vector2) -> void:
 	health -= damage
@@ -38,7 +36,3 @@ func _on_sight_body_entered(body: Node2D) -> void:
 	if body.name == "Player":
 		target = body
 		print(target)
-
-
-func _on_enemy_hitbox_body_exited(body: Node2D) -> void:
-	pass # Replace with function body.

@@ -31,7 +31,7 @@ func take_damage(damage: int, attacker_position: Vector2) -> void:
 
 func _die() -> void:
 	queue_free()
-	
+
 func _on_sight_body_entered(body: Node2D) -> void:
 	if body.name == "Player":
 		target = body

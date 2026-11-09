@@ -1,15 +1,11 @@
 [gd_scene format=4 uid="uid://dv1lls1tjywii"]
 
 [ext_resource type="PackedScene" uid="uid://dvlip4jt4knlc" path="res://scenes/player.tscn" id="1_uwrxv"]
-[ext_resource type="Texture2D" path="res://assets/sprites/apartment1.png" id="2_lbhrr"]
 [ext_resource type="Texture2D" uid="uid://diubvywx52w71" path="res://assets/sprites/Top-down_Tileset_32x32.png" id="2_yqjtg"]
-[ext_resource type="Texture2D" path="res://assets/sprites/fountan1.png" id="3_0tnpc"]
-[ext_resource type="Texture2D" path="res://assets/sprites/mixedBuilding1.png" id="3_gee14"]
 [ext_resource type="Texture2D" uid="uid://cod0a7wnun723" path="res://assets/sprites/Premium_Trees_Black_Outline.png" id="3_lnu2h"]
-[ext_resource type="Texture2D" path="res://assets/sprites/mixedBuilding2.png" id="4_0tnpc"]
 [ext_resource type="Texture2D" uid="uid://d32o1x4f0qr5m" path="res://assets/sprites/Decorations.png" id="5_dinhu"]
-[ext_resource type="Texture2D" path="res://assets/sprites/mixedBuilding3.png" id="5_vtaks"]
-[ext_resource type="Texture2D" path="res://assets/sprites/mixedBuilding4.png" id="6_kvpfn"]
+[ext_resource type="PackedScene" uid="uid://j7b2c5lkg4y3" path="res://scenes/enemy_spawner.tscn" id="7_u5sy4"]
+[ext_resource type="Script" uid="uid://xnabchuro24t" path="res://scripts/enemy_spawner.gd" id="8_gee14"]
 [ext_resource type="Texture2D" uid="uid://7qo8p8x2g21c" path="res://assets/sprites/scoop.png" id="8_vtaks"]
 [ext_resource type="Texture2D" uid="uid://cp41dvkwvo1ro" path="res://assets/sprites/Buildings.png" id="9_kvpfn"]
 
@@ -903,8 +899,6 @@ texture = ExtResource("2_yqjtg")
 17:14/0/physics_layer_0/polygon_0/points = PackedVector2Array(0.71943474, -8, 8, -8, 8, 8, 0.71943474, 8, 0.5395756, 0.8992939, -8, 1.0791531, -8, -8)
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_gee14"]
-texture = ExtResource("2_lbhrr")
-0:0/size_in_atlas = Vector2i(8, 8)
 0:0/0 = 0
 0:1/0 = 0
 0:2/0 = 0
@@ -970,8 +964,6 @@ texture = ExtResource("2_lbhrr")
 7:7/0 = 0
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_vtaks"]
-texture = ExtResource("3_0tnpc")
-2:3/size_in_atlas = Vector2i(4, 4)
 2:3/0 = 0
 2:3/0/physics_layer_0/polygon_0/points = PackedVector2Array(-29.31403, -8.284399, -19.436478, -14.657015, -6.691246, -18.161953, 10.514816, -17.843323, 21.985523, -14.657015, 30.269924, -8.603029, 30.269924, 7.6471367, 21.985523, 14.0197525, 12.426598, 17.206062, -9.240292, 16.887432, -20.073738, 14.657017, -28.9954, 8.921661)
 
@@ -993,36 +985,26 @@ sources/2 = SubResource("TileSetAtlasSource_vtaks")
 sources/3 = SubResource("TileSetAtlasSource_rysoc")
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_0tnpc"]
-texture = ExtResource("2_lbhrr")
-0:0/size_in_atlas = Vector2i(8, 8)
 0:0/0 = 0
 0:0/0/y_sort_origin = 40
 0:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-57.851234, 31.955925, 57.300278, 31.955925, 56.749313, 63.91185, -56.19834, 66.11571)
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_dinhu"]
-texture = ExtResource("3_gee14")
-0:0/size_in_atlas = Vector2i(8, 8)
 0:0/0 = 0
 0:0/0/y_sort_origin = 40
 0:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-57.851234, 31.955925, 57.300278, 31.955925, 56.749313, 63.91185, -56.19834, 66.11571)
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_kvuet"]
-texture = ExtResource("4_0tnpc")
-0:0/size_in_atlas = Vector2i(8, 8)
 0:0/0 = 0
 0:0/0/y_sort_origin = 40
 0:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-57.851234, 31.955925, 57.300278, 31.955925, 56.749313, 63.91185, -56.19834, 66.11571)
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_trtic"]
-texture = ExtResource("5_vtaks")
-0:0/size_in_atlas = Vector2i(8, 8)
 0:0/0 = 0
 0:0/0/y_sort_origin = 40
 0:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-57.851234, 31.955925, 57.300278, 31.955925, 56.749313, 63.91185, -56.19834, 66.11571)
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_ir15t"]
-texture = ExtResource("6_kvpfn")
-0:0/size_in_atlas = Vector2i(8, 8)
 0:0/0 = 0
 0:0/0/y_sort_origin = 40
 0:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-57.851234, 31.955925, 57.300278, 31.955925, 56.749313, 63.91185, -56.19834, 66.11571)
@@ -1172,3 +1154,13 @@ position_smoothing_enabled = true
 
 [node name="TileMapLayer" type="TileMapLayer" parent="." unique_id=993370120]
 tile_set = SubResource("TileSet_gl52s")
+
+[node name="enemy_spawner" parent="." unique_id=1002391940 instance=ExtResource("7_u5sy4")]
+position = Vector2(118, -591)
+script = ExtResource("8_gee14")
+
+[node name="Timer2" type="Timer" parent="enemy_spawner" unique_id=897770381]
+wait_time = 3.0
+autostart = true
+
+[connection signal="timeout" from="enemy_spawner/Timer2" to="enemy_spawner" method="_on_timer_2_timeout"]

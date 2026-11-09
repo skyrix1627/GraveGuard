@@ -1,0 +1,19 @@
+[gd_scene format=3 uid="uid://j7b2c5lkg4y3"]
+
+[ext_resource type="Script" path="res://scripts/enemy_spawner.gd" id="1_ks1gq"]
+[ext_resource type="PackedScene" uid="uid://cmvmoocc053g4" path="res://scenes/enemy.tscn" id="2_devoi"]
+[ext_resource type="Texture2D" path="res://assets/sprites/fountan1.png" id="3_xl0gr"]
+
+[node name="enemy_spawner" type="Node2D" unique_id=1002391940]
+script = ExtResource("1_ks1gq")
+enemy_prefab = ExtResource("2_devoi")
+
+[node name="Timer" type="Timer" parent="." unique_id=801345912]
+wait_time = 3.0
+autostart = true
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=341214444]
+position = Vector2(6, -11)
+texture = ExtResource("3_xl0gr")
+
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

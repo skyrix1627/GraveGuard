@@ -12,6 +12,7 @@
 [ext_resource type="Texture2D" uid="uid://c6elwn6o8k7ra" path="res://assets/sprites/mixedBuilding4.png" id="6_kvpfn"]
 [ext_resource type="Texture2D" uid="uid://7qo8p8x2g21c" path="res://assets/sprites/scoop.png" id="8_vtaks"]
 [ext_resource type="Texture2D" uid="uid://cp41dvkwvo1ro" path="res://assets/sprites/Buildings.png" id="9_kvpfn"]
+[ext_resource type="PackedScene" uid="uid://gxmjsuxigbtp" path="res://scenes/enemy_spawner.tscn" id="13_kvuet"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_lbhrr"]
 texture = ExtResource("3_lnu2h")
@@ -1166,7 +1167,9 @@ position = Vector2(-300, -37)
 
 [node name="Camera2D" type="Camera2D" parent="Player" unique_id=740775175]
 zoom = Vector2(3, 3)
-position_smoothing_enabled = true
 
 [node name="TileMapLayer" type="TileMapLayer" parent="." unique_id=993370120]
 tile_set = SubResource("TileSet_gl52s")
+
+[node name="enemy_spawner" parent="." unique_id=1002391940 instance=ExtResource("13_kvuet")]
+position = Vector2(-420, -22)

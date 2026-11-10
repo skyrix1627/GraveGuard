@@ -1,0 +1,8 @@
+[gd_scene format=3 uid="uid://deeardpkoalxq"]
+
+[ext_resource type="Script" uid="uid://cixjiqedm7qk3" path="res://scripts/graveyard.gd" id="1_x72jc"]
+
+[node name="Graveyard" type="Node2D" unique_id=633389311]
+script = ExtResource("1_x72jc")
+
+[node name="Grave" type="Node2D" parent="." unique_id=1786156046]

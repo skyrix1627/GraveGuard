@@ -1,5 +1,7 @@
 extends CharacterBody2D
 
+@export var pickUp_prefab : PackedScene
+
 const 	KNOCKBACK_FORCE: int = 50
 
 var health: int = 100
@@ -29,8 +31,20 @@ func take_damage(damage: int, attacker_position: Vector2) -> void:
 
 func _die() -> void:
 	queue_free()
+	loot_drop_calc()
 	Global.kills += 1
 	Global.euro += 1 * Global.wave_multiplier
+	
+func loot_drop_calc():
+	var drop_chance = randf()
+	
+	if drop_chance <= 1.00:
+		print("generic coin or somethin")
+	elif drop_chance <= 0.10:
+		var pickUp = pickUp_prefab.instantiate()
+		get_tree().current_scene.add_child(pickUp)
+		pickUp.global_position = global_position
+
 
 func _on_sight_body_entered(body: Node2D) -> void:
 	if body.name == "Player":

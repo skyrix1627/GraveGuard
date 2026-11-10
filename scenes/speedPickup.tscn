@@ -1,0 +1,22 @@
+[gd_scene format=3 uid="uid://t0iguycwpys0"]
+
+[ext_resource type="Script" uid="uid://cujj2bswyt0iv" path="res://scripts/stat_pickup.gd" id="1_t7746"]
+[ext_resource type="Texture2D" uid="uid://cmaw41snhavp" path="res://assets/sprites/Cashier.png" id="2_a6iip"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_oybhc"]
+size = Vector2(6.5, 12.5)
+
+[node name="speedPickup" type="Area2D" unique_id=637860289]
+script = ExtResource("1_t7746")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1176442861]
+position = Vector2(3.5000002, -6)
+scale = Vector2(0.118644066, 0.124999955)
+texture = ExtResource("2_a6iip")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1113036576]
+position = Vector2(3.25, -6.25)
+shape = SubResource("RectangleShape2D_oybhc")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
+[connection signal="body_exited" from="." to="." method="_on_body_exited"]

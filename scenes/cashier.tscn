@@ -1,0 +1,10 @@
+[gd_scene format=3 uid="uid://bvyxgrcokofg7"]
+
+[ext_resource type="Texture2D" uid="uid://cmaw41snhavp" path="res://assets/sprites/Cashier.png" id="1_hp5mn"]
+
+[node name="Cashier" type="Node2D" unique_id=1802007311]
+
+[node name="Cashier" type="Sprite2D" parent="." unique_id=1557764146]
+position = Vector2(6.000004, -10.000004)
+scale = Vector2(0.2, 0.2)
+texture = ExtResource("1_hp5mn")

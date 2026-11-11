@@ -1,0 +1,16 @@
+[gd_scene format=3 uid="uid://cqq7puegltu6"]
+
+[ext_resource type="Texture2D" uid="uid://b7he0jwiwrpgt" path="res://assets/sprites/grave2.png" id="1_qpo7b"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_5hvud"]
+size = Vector2(24, 18)
+
+[node name="Grave" type="Area2D" unique_id=490835052]
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=543578798]
+position = Vector2(16, 16)
+texture = ExtResource("1_qpo7b")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=297715550]
+position = Vector2(16, 22)
+shape = SubResource("RectangleShape2D_5hvud")

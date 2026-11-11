@@ -33,7 +33,7 @@ func take_damage(damage: int, attacker_position: Vector2) -> void:
 func _die() -> void:
 	queue_free()
 	loot_drop_calc()
-	graveyard.spawn_grave()
+	graveyard.call_deferred("spawn_grave")
 	Global.kills += 1
 	Global.euro += 1 * Global.wave_multiplier
 	

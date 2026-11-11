@@ -7,9 +7,8 @@
 [ext_resource type="PackedScene" uid="uid://ipui2qwlci6q" path="res://scenes/enemy_spawner.tscn" id="7_u5sy4"]
 [ext_resource type="PackedScene" uid="uid://bvyxgrcokofg7" path="res://scenes/cashier.tscn" id="8_gee14"]
 [ext_resource type="Texture2D" uid="uid://7qo8p8x2g21c" path="res://assets/sprites/scoop.png" id="8_vtaks"]
-[ext_resource type="PackedScene" uid="uid://t0iguycwpys0" path="res://scenes/speedPickup.tscn" id="9_0tnpc"]
-[ext_resource type="Resource" uid="uid://br6vlalkypl58" path="res://dialogue/characters/cashier.dialogue" id="9_dinhu"]
 [ext_resource type="PackedScene" uid="uid://co7kyqny7wv7r" path="res://scenes/graveyard.tscn" id="9_0tnpc"]
+[ext_resource type="Resource" uid="uid://br6vlalkypl58" path="res://dialogue/characters/cashier.dialogue" id="9_dinhu"]
 [ext_resource type="Texture2D" uid="uid://cp41dvkwvo1ro" path="res://assets/sprites/Buildings.png" id="9_kvpfn"]
 [ext_resource type="PackedScene" uid="uid://cdtru7tgiuyx0" path="res://helpers/actionable.tscn" id="10_vtaks"]
 [ext_resource type="Script" uid="uid://drflnsnpsqdw2" path="res://helpers/actionable.gd" id="11_kvpfn"]
@@ -1068,5 +1067,6 @@ position = Vector2(-226, -9)
 
 [node name="Actionable" parent="." unique_id=1035524170 instance=ExtResource("10_vtaks")]
 script = ExtResource("11_kvpfn")
+
 [node name="Graveyard" parent="." unique_id=633389311 instance=ExtResource("9_0tnpc")]
 position = Vector2(-544, -792)

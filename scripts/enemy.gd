@@ -2,6 +2,7 @@ extends CharacterBody2D
 
 @export var pickUp_prefab : PackedScene
 @export var strengthUp_prefab : PackedScene
+@export var rangeUp_prefab : PackedScene
 
 const 	KNOCKBACK_FORCE: int = 50
 
@@ -47,7 +48,11 @@ func loot_drop_calc():
 		var pickUp = pickUp_prefab.instantiate()
 		get_tree().current_scene.add_child(pickUp)
 		pickUp.global_position = global_position
-	elif drop_chance <= 0.85:
+	elif drop_chance <= 0.10: #curently = to 10% (25% total)
+		var rangeUp = rangeUp_prefab.instantiate()
+		get_tree().current_scene.add_child(rangeUp)
+		rangeUp.global_position = global_position
+	elif drop_chance <= 0.79:
 		print("generic coin or somethin")
 
 

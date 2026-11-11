@@ -9,6 +9,7 @@
 [ext_resource type="Texture2D" uid="uid://7qo8p8x2g21c" path="res://assets/sprites/scoop.png" id="8_vtaks"]
 [ext_resource type="PackedScene" uid="uid://dmaaxy5gkqu70" path="res://scenes/strength_pickup.tscn" id="9_0tnpc"]
 [ext_resource type="Texture2D" uid="uid://cp41dvkwvo1ro" path="res://assets/sprites/Buildings.png" id="9_kvpfn"]
+[ext_resource type="PackedScene" uid="uid://c7nys862ebqfw" path="res://scenes/range_pickup.tscn" id="10_vtaks"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_lbhrr"]
 texture = ExtResource("3_lnu2h")
@@ -1052,3 +1053,6 @@ position = Vector2(-226, -9)
 
 [node name="strength_pickup" parent="." unique_id=721338528 instance=ExtResource("9_0tnpc")]
 position = Vector2(-253, -9)
+
+[node name="range_pickup" parent="." unique_id=2017595997 instance=ExtResource("10_vtaks")]
+position = Vector2(-242, -24)

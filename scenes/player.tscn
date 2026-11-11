@@ -13,9 +13,13 @@ var hitbox_offset: Vector2
 
 @onready var animated_sprite_2d: AnimatedSprite2D = $AnimatedSprite2D
 @onready var hit_box_baton: Area2D = $hitBoxBaton
+@onready var attack_range = $hitBoxBaton/CollisionShape2D
  
+
+
 func _ready() -> void:
 	hitbox_offset = hit_box_baton.position
+
 
 func _physics_process(_delta: float) -> void:
 	hit_box_baton.monitoring = false
@@ -26,6 +30,7 @@ func _physics_process(_delta: float) -> void:
 	process_movement()
 	process_animation()
 	move_and_slide()
+	#increase_player_range()
 	
 func process_movement() -> void:
 	
@@ -73,6 +78,15 @@ func _on_animated_sprite_2d_animation_finished() -> void:
 		is_attacking = false 
 
 # ------------------------------------------------------------------------
+
+func increase_player_range():
+
+	attack_range.shape.radius *= 1.5
+	attack_range.shape.height *= 1.5
+
+func reset_range(): #use on death of player
+	attack_range.shape.radius = 8
+	attack_range.shape.height = 26
 
 func update_hitbox_offset() -> void:
 	var x := hitbox_offset.x
@@ -311,7 +325,7 @@ animations = [{
 radius = 8.0
 height = 26.0
 
-[node name="Player" type="CharacterBody2D" unique_id=1489929400]
+[node name="Player" type="CharacterBody2D" unique_id=1489929400 groups=["Player"]]
 position = Vector2(6, -10)
 script = SubResource("GDScript_g2els")
 

@@ -10,6 +10,7 @@
 [ext_resource type="PackedScene" uid="uid://dmaaxy5gkqu70" path="res://scenes/strength_pickup.tscn" id="9_0tnpc"]
 [ext_resource type="Texture2D" uid="uid://cp41dvkwvo1ro" path="res://assets/sprites/Buildings.png" id="9_kvpfn"]
 [ext_resource type="PackedScene" uid="uid://c7nys862ebqfw" path="res://scenes/range_pickup.tscn" id="10_vtaks"]
+[ext_resource type="PackedScene" uid="uid://bvyxgrcokofg7" path="res://scenes/cashier.tscn" id="11_kvpfn"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_p57ef"]
 texture = ExtResource("2_yqjtg")
@@ -908,3 +909,7 @@ position = Vector2(-253, -9)
 
 [node name="range_pickup" parent="." unique_id=2017595997 instance=ExtResource("10_vtaks")]
 position = Vector2(-242, -24)
+
+[node name="Cashier" parent="." unique_id=1802007311 instance=ExtResource("11_kvpfn")]
+y_sort_enabled = true
+position = Vector2(361, -179)

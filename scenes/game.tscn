@@ -7,6 +7,7 @@
 [ext_resource type="PackedScene" uid="uid://ipui2qwlci6q" path="res://scenes/enemy_spawner.tscn" id="7_u5sy4"]
 [ext_resource type="PackedScene" uid="uid://t0iguycwpys0" path="res://scenes/speedPickup.tscn" id="8_gee14"]
 [ext_resource type="Texture2D" uid="uid://7qo8p8x2g21c" path="res://assets/sprites/scoop.png" id="8_vtaks"]
+[ext_resource type="PackedScene" uid="uid://co7kyqny7wv7r" path="res://scenes/graveyard.tscn" id="9_0tnpc"]
 [ext_resource type="Texture2D" uid="uid://cp41dvkwvo1ro" path="res://assets/sprites/Buildings.png" id="9_kvpfn"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_lbhrr"]
@@ -1035,16 +1036,16 @@ tile_set = SubResource("TileSet_5hvud")
 [node name="Player" parent="." unique_id=1489929400 instance=ExtResource("1_uwrxv")]
 z_index = 1
 y_sort_enabled = true
-position = Vector2(-300, -37)
+position = Vector2(-224, -680)
 
 [node name="Camera2D" type="Camera2D" parent="Player" unique_id=740775175]
 zoom = Vector2(3, 3)
 
-[node name="Camera2D2" type="Camera2D" parent="Player" unique_id=1344548282]
-zoom = Vector2(3, 3)
-
 [node name="enemy_spawner" parent="." unique_id=1921807385 instance=ExtResource("7_u5sy4")]
-position = Vector2(-400, -28)
+position = Vector2(-296, -528)
 
 [node name="speedPickup" parent="." unique_id=637860289 instance=ExtResource("8_gee14")]
 position = Vector2(-226, -9)
+
+[node name="Graveyard" parent="." unique_id=633389311 instance=ExtResource("9_0tnpc")]
+position = Vector2(-544, -792)

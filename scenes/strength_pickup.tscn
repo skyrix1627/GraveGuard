@@ -1,0 +1,21 @@
+[gd_scene format=3 uid="uid://dmaaxy5gkqu70"]
+
+[ext_resource type="Script" uid="uid://c28xqoupp7q7j" path="res://scripts/strength_pickup.gd" id="1_4l7cs"]
+[ext_resource type="Texture2D" uid="uid://bh6yqpa5uw4yu" path="res://assets/sprites/evilTempPlayer.png" id="2_mbk7l"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_4i757"]
+size = Vector2(4, 6)
+
+[node name="strength_pickup" type="Area2D" unique_id=721338528]
+script = ExtResource("1_4l7cs")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1220147023]
+position = Vector2(1.9999999, -3)
+scale = Vector2(0.0677966, 0.0625)
+texture = ExtResource("2_mbk7l")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1130737544]
+position = Vector2(2, -3)
+shape = SubResource("RectangleShape2D_4i757")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]

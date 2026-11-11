@@ -2,7 +2,7 @@
 
 [ext_resource type="Texture2D" uid="uid://calb5d8onw5cm" path="res://assets/sprites/Zombie.png" id="1_1vlb3"]
 
-[node name="Zombie" type="Node2D" unique_id=1216456640]
+[node name="Zombie" type="CharacterBody2D" unique_id=393519085]
 
 [node name="Zombie" type="Sprite2D" parent="." unique_id=920500739]
 position = Vector2(6.000002, -10.000004)

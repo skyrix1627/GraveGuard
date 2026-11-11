@@ -13,6 +13,7 @@ var strength: int = 25
 
 @onready var animated_sprite_2d: AnimatedSprite2D = $AnimatedSprite2D
 @onready var hit_box_baton: Area2D = $hitBoxBaton
+@onready var actionable_finder: Area2D = $Direction/ActionableFinder
  
 func _ready() -> void:
 	hitbox_offset = hit_box_baton.position
@@ -40,7 +41,12 @@ func process_movement() -> void:
 	
 	velocity = direction * Global.player_speed
 	
-
+func _unhandled_input(event: InputEvent) -> void:
+	if Input.is_action_just_pressed(\"ui_accept\"):
+		var actionables = actionable_finder.get_overlapping_areas()
+		if actionables.size() > 0:
+			actionables[0].action()
+			return
 	
 func process_animation() -> void:
 	if is_attacking == true:
@@ -311,6 +317,9 @@ animations = [{
 radius = 8.0
 height = 26.0
 
+[sub_resource type="CircleShape2D" id="CircleShape2D_gl52s"]
+radius = 22.022715
+
 [node name="Player" type="CharacterBody2D" unique_id=1489929400]
 position = Vector2(6, -10)
 script = SubResource("GDScript_g2els")
@@ -322,7 +331,7 @@ shape = SubResource("RectangleShape2D_yqjtg")
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1650926126]
 scale = Vector2(0.2, 0.2)
 sprite_frames = SubResource("SpriteFrames_dkgtv")
-animation = &"attack_down"
+animation = &"idle_down"
 
 [node name="hitBoxBaton" type="Area2D" parent="." unique_id=1386756528]
 position = Vector2(8, 0)
@@ -331,6 +340,15 @@ metadata/_edit_group_ = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="hitBoxBaton" unique_id=1737940385]
 shape = SubResource("CapsuleShape2D_yywig")
+
+[node name="Direction" type="Marker2D" parent="." unique_id=52117999]
+
+[node name="ActionableFinder" type="Area2D" parent="Direction" unique_id=1847016912]
+collision_layer = 16
+collision_mask = 16
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Direction/ActionableFinder" unique_id=945850594]
+shape = SubResource("CircleShape2D_gl52s")
 
 [connection signal="animation_finished" from="AnimatedSprite2D" to="." method="_on_animated_sprite_2d_animation_finished"]
 [connection signal="body_entered" from="hitBoxBaton" to="." method="_on_hit_box_baton_body_entered"]

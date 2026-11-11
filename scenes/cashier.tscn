@@ -1,10 +1,18 @@
 [gd_scene format=3 uid="uid://bvyxgrcokofg7"]
 
 [ext_resource type="Texture2D" uid="uid://cmaw41snhavp" path="res://assets/sprites/Cashier.png" id="1_hp5mn"]
+[ext_resource type="Script" uid="uid://cqcur1rm7433g" path="res://addons/dialogue_manager/nodes/actionable/dialogue_actionable_2d.gd" id="2_yvugg"]
+[ext_resource type="Resource" uid="uid://br6vlalkypl58" path="res://dialogue/characters/cashier.dialogue" id="3_xw6i5"]
 
-[node name="Cashier" type="Node2D" unique_id=1802007311]
+[node name="Cashier" type="CharacterBody2D" unique_id=464324707]
 
 [node name="Cashier" type="Sprite2D" parent="." unique_id=1557764146]
 position = Vector2(6.000004, -10.000004)
 scale = Vector2(0.2, 0.2)
 texture = ExtResource("1_hp5mn")
+
+[node name="DialogueActionable2D" type="Area2D" parent="." unique_id=1496603366]
+script = ExtResource("2_yvugg")
+dialogue_resource = ExtResource("3_xw6i5")
+dialogue_cue = "intro"
+metadata/_custom_type_script = "uid://cqcur1rm7433g"

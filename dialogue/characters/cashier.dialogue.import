@@ -1,0 +1,16 @@
+[remap]
+
+importer="dialogue_manager"
+importer_version=18
+type="Resource"
+uid="uid://br6vlalkypl58"
+path="res://.godot/imported/cashier.dialogue-68730f1b38d6badf85afb7c7ade7f6b9.tres"
+
+[deps]
+
+source_file="res://dialogue/characters/cashier.dialogue"
+dest_files=["res://.godot/imported/cashier.dialogue-68730f1b38d6badf85afb7c7ade7f6b9.tres"]
+
+[params]
+
+defaults=true

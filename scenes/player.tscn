@@ -312,17 +312,22 @@ radius = 8.0
 height = 26.0
 
 [node name="Player" type="CharacterBody2D" unique_id=1489929400]
+y_sort_enabled = true
 position = Vector2(6, -10)
 script = SubResource("GDScript_g2els")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1978964934]
+y_sort_enabled = true
 position = Vector2(0, 5)
 shape = SubResource("RectangleShape2D_yqjtg")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1650926126]
+y_sort_enabled = true
+position = Vector2(0, 9.999999)
 scale = Vector2(0.2, 0.2)
 sprite_frames = SubResource("SpriteFrames_dkgtv")
 animation = &"attack_down"
+offset = Vector2(0, -50)
 
 [node name="hitBoxBaton" type="Area2D" parent="." unique_id=1386756528]
 position = Vector2(8, 0)

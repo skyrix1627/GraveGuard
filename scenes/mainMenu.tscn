@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://64mdttm3vawp"]
 
-[ext_resource type="Script" uid="uid://cjlab75rn5kcb" path="res://scenes/main_menu.gd" id="1_3d1i7"]
+[ext_resource type="Script" uid="uid://cjlab75rn5kcb" path="res://scripts/main_menu.gd" id="1_3d1i7"]
 [ext_resource type="FontFile" uid="uid://dxkhgawoaamoq" path="res://PixelOperator.ttf" id="2_48ign"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_gl52s"]

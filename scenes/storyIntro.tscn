@@ -1,0 +1,60 @@
+[gd_scene format=3 uid="uid://eq0l7flxd051"]
+
+[ext_resource type="Script" uid="uid://bfumc2rqkdmaw" path="res://scripts/story_intro.gd" id="1_1usdc"]
+[ext_resource type="FontFile" uid="uid://dxkhgawoaamoq" path="res://PixelOperator.ttf" id="2_of718"]
+
+[node name="storyIntro" type="Control" unique_id=1662330494]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_1usdc")
+
+[node name="ColorRect" type="ColorRect" parent="." unique_id=1889068556]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 1)
+
+[node name="MarginContainer" type="MarginContainer" parent="." unique_id=1234935575]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 50
+theme_override_constants/margin_top = 50
+theme_override_constants/margin_right = 50
+theme_override_constants/margin_bottom = 50
+
+[node name="RichTextLabel" type="RichTextLabel" parent="MarginContainer" unique_id=1903539847]
+layout_mode = 2
+theme_override_fonts/normal_font = ExtResource("2_of718")
+theme_override_font_sizes/normal_font_size = 35
+text = "You recently moved to a samll town for your new jobb, as a grave guard.
+
+But the small litle town has a mysteries aura surounding it, you felt it the first day you entered but you couldnt really put your finger on what it was. There is also stories about ghost and zombies being seen in the night around the gravecyard and how the last few grave guards have gone missing without a trace during the night. 
+
+But who beilves in ghost stoies like that, only a child or a paranoid elder would fall for something as fable as that..."
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Label" type="Label" parent="." unique_id=759814087]
+layout_mode = 0
+offset_left = 50.0
+offset_top = 567.0
+offset_right = 1102.0
+offset_bottom = 598.0
+grow_horizontal = 2
+grow_vertical = 0
+size_flags_vertical = 8
+theme_override_fonts/font = ExtResource("2_of718")
+theme_override_font_sizes/font_size = 30
+text = "Press any key to continue..."
+horizontal_alignment = 2

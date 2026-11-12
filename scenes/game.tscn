@@ -12,6 +12,8 @@
 [ext_resource type="Texture2D" uid="uid://cp41dvkwvo1ro" path="res://assets/sprites/Buildings.png" id="9_kvpfn"]
 [ext_resource type="PackedScene" uid="uid://cdtru7tgiuyx0" path="res://helpers/actionable.tscn" id="10_vtaks"]
 [ext_resource type="Script" uid="uid://drflnsnpsqdw2" path="res://helpers/actionable.gd" id="11_kvpfn"]
+[ext_resource type="PackedScene" uid="uid://dmaaxy5gkqu70" path="res://scenes/strength_pickup.tscn" id="13_kvuet"]
+[ext_resource type="PackedScene" uid="uid://c7nys862ebqfw" path="res://scenes/range_pickup.tscn" id="14_trtic"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_p57ef"]
 texture = ExtResource("2_yqjtg")
@@ -1064,3 +1066,9 @@ script = ExtResource("11_kvpfn")
 
 [node name="Graveyard" parent="." unique_id=633389311 instance=ExtResource("9_0tnpc")]
 position = Vector2(-544, -792)
+
+[node name="strengthPickup" parent="." unique_id=1789995817 instance=ExtResource("13_kvuet")]
+position = Vector2(-190, -620)
+
+[node name="rangePickup" parent="." unique_id=2030020607 instance=ExtResource("14_trtic")]
+position = Vector2(-189, -581)

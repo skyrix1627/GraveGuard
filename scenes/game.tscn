@@ -1058,9 +1058,6 @@ zoom = Vector2(3, 3)
 [node name="enemy_spawner" parent="." unique_id=1921807385 instance=ExtResource("7_u5sy4")]
 position = Vector2(-296, -528)
 
-[node name="speedPickup" parent="." unique_id=637860289 instance=ExtResource("9_0tnpc")]
-position = Vector2(-226, -9)
-
 [node name="Actionable" parent="." unique_id=1035524170 instance=ExtResource("10_vtaks")]
 script = ExtResource("11_kvpfn")
 

@@ -1,18 +1,18 @@
 [gd_scene format=3 uid="uid://cmvmoocc053g4"]
 
-[ext_resource type="Texture2D" uid="uid://r6140u7tjrsx" path="res://icon.svg" id="1_7p1mj"]
 [ext_resource type="Script" uid="uid://e5f5pmr8sst2" path="res://scripts/enemy.gd" id="1_md0e3"]
 [ext_resource type="PackedScene" uid="uid://t0iguycwpys0" path="res://scenes/speedPickup.tscn" id="2_4ra3w"]
+[ext_resource type="Texture2D" uid="uid://di4ygn22hvo4s" path="res://assets/sprites/enemy.png" id="3_4ra3w"]
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_md0e3"]
-atlas = ExtResource("1_7p1mj")
-region = Rect2(0, 0, 128, 128)
+[sub_resource type="AtlasTexture" id="AtlasTexture_5uy6h"]
+atlas = ExtResource("3_4ra3w")
+region = Rect2(177, 192, 59, 96)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_5hvud"]
 animations = [{
 "frames": [{
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_md0e3")
+"texture": SubResource("AtlasTexture_5uy6h")
 }],
 "loop": 1,
 "name": &"idle",
@@ -33,7 +33,7 @@ pickUp_prefab = ExtResource("2_4ra3w")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1085332659]
 position = Vector2(0, -1.9073486e-06)
-scale = Vector2(0.12500001, 0.12500001)
+scale = Vector2(0.2, 0.2)
 sprite_frames = SubResource("SpriteFrames_5hvud")
 animation = &"idle"
 

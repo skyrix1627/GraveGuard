@@ -1,6 +1,7 @@
 extends CharacterBody2D
 
 @export var pickUp_prefab : PackedScene
+@onready var graveyard = get_tree().get_first_node_in_group("graveyard")
 
 const 	KNOCKBACK_FORCE: int = 50
 
@@ -32,6 +33,7 @@ func take_damage(damage: int, attacker_position: Vector2) -> void:
 func _die() -> void:
 	queue_free()
 	loot_drop_calc()
+	graveyard.call_deferred("spawn_grave")
 	Global.kills += 1
 	Global.euro += 1 * Global.wave_multiplier
 	

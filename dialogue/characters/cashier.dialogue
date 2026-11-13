@@ -2,28 +2,32 @@
 Cashier: Hello.
 - Who are you? => meet_cashier
 - Where are we? => where_are_we
+- Buy => shop
 - Never mind. => wow
-=> END
 
 ~ meet_cashier
-Cashier: ... 
 Cashier: ...
-Cashier: Im the cashier working in this store.
+Cashier: ...
+Cashier: I'm the cashier working in this store.
 => END
 
 ~ where_are_we
 Cashier: ...
-Cashier: We are in scoop.
+Cashier: We are in Scoop.
 You: ...
 => END
 
 ~ wow
-Cashier: Your just going to leave without buying anything? => intro2
+Cashier: You're just going to leave without buying anything?
+=> intro2
 
 ~ intro2
 Cashier: Hello.
 - Who are you? => meet_cashier
 - Where are we? => where_are_we
-- Buy 
-- Never mind. => wow
+- Buy => shop
+- Never mind, I'm leaving. => END
+
+~ shop
+do GameData.open_shop()
 => END

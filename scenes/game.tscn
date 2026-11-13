@@ -990,6 +990,9 @@ sources/0 = SubResource("TileSetAtlasSource_lbhrr")
 radius = 4.0
 height = 20.0
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_73dut"]
+size = Vector2(82, 26)
+
 [node name="Game" type="Node2D" unique_id=809155825]
 y_sort_enabled = true
 
@@ -1050,13 +1053,13 @@ shape = SubResource("CapsuleShape2D_gl52s")
 [node name="Player" parent="." unique_id=1489929400 instance=ExtResource("1_uwrxv")]
 z_index = 1
 y_sort_enabled = true
-position = Vector2(-224, -680)
+position = Vector2(24, -312)
 
 [node name="Camera2D" type="Camera2D" parent="Player" unique_id=740775175]
 zoom = Vector2(3, 3)
 
 [node name="enemy_spawner" parent="." unique_id=1921807385 instance=ExtResource("7_u5sy4")]
-position = Vector2(-296, -528)
+position = Vector2(-584, -800)
 
 [node name="Actionable" parent="." unique_id=1035524170 instance=ExtResource("10_vtaks")]
 script = ExtResource("11_kvpfn")
@@ -1069,3 +1072,25 @@ position = Vector2(-190, -620)
 
 [node name="rangePickup" parent="." unique_id=2030020607 instance=ExtResource("14_trtic")]
 position = Vector2(-189, -581)
+
+[node name="arena_zone" type="Node2D" parent="." unique_id=443555377]
+
+[node name="TopLeft (Enemy spawn)" type="Marker2D" parent="arena_zone" unique_id=1505434461]
+position = Vector2(-560, -776)
+
+[node name="BottomLeft (Enemy spawn)" type="Marker2D" parent="arena_zone" unique_id=277570025]
+position = Vector2(-560, -464)
+
+[node name="BottomRight (Enemy spawn)" type="Marker2D" parent="arena_zone" unique_id=498430502]
+position = Vector2(592, -456)
+
+[node name="TopRight (Enemy spawn)" type="Marker2D" parent="arena_zone" unique_id=37115510]
+position = Vector2(592, -776)
+
+[node name="Barrier" type="StaticBody2D" parent="arena_zone" unique_id=1273535297]
+position = Vector2(-16, -432)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="arena_zone/Barrier" unique_id=1420392328]
+position = Vector2(32, 8)
+shape = SubResource("RectangleShape2D_73dut")
+disabled = true

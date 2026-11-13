@@ -14,6 +14,7 @@
 [ext_resource type="Script" uid="uid://drflnsnpsqdw2" path="res://helpers/actionable.gd" id="11_kvpfn"]
 [ext_resource type="PackedScene" uid="uid://dmaaxy5gkqu70" path="res://scenes/strength_pickup.tscn" id="13_kvuet"]
 [ext_resource type="PackedScene" uid="uid://c7nys862ebqfw" path="res://scenes/range_pickup.tscn" id="14_trtic"]
+[ext_resource type="PackedScene" uid="uid://cqholisdgixdk" path="res://scenes/night_time_layer.tscn" id="15_ir15t"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_p57ef"]
 texture = ExtResource("2_yqjtg")
@@ -1072,3 +1073,5 @@ position = Vector2(-190, -620)
 
 [node name="rangePickup" parent="." unique_id=2030020607 instance=ExtResource("14_trtic")]
 position = Vector2(-189, -581)
+
+[node name="night_time_layer" parent="." unique_id=1629754551 instance=ExtResource("15_ir15t")]

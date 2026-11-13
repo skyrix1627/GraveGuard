@@ -18,6 +18,8 @@ func _ready():
 	randomize()
 	
 	create_sections()
+	for i in range(2):
+		spawn_grave()
 
 func create_sections():
 	var columns = grid_width / cell_size

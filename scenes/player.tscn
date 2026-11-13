@@ -114,8 +114,8 @@ func update_hitbox_offset() -> void:
 			hit_box_baton.position = Vector2(-y, x)
 			
 func _on_hit_box_baton_body_entered(body: Node2D) -> void:
-	if is_attacking and body.name.begins_with(\"Enemy\"):
-		body.take_damage(Global.player_strength, position)
+	if is_attacking and body.is_in_group(\"enemies\"):
+		body.take_damage(Global.player_strength, global_position)
 		
 		
 func take_damage(amount: int) -> void:
@@ -131,7 +131,7 @@ func take_damage(amount: int) -> void:
 func die() -> void:
 	print(\"die\")
 	alive = false
-	died.emit( )
+	died.emit()
 "
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_yqjtg"]

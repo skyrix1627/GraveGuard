@@ -12,6 +12,9 @@ var health: int = 100
 var target = null
 var target_in_range: bool = false
 
+func _ready() -> void:
+	add_to_group("enemies")
+
 func _physics_process(delta: float) -> void:
 	if target:
 		_attack(delta)

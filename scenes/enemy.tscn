@@ -28,7 +28,7 @@ radius = 8.0
 radius = 69.0
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_oybhc"]
-radius = 5.0
+radius = 6.0
 height = 16.0
 
 [node name="Enemy" type="CharacterBody2D" unique_id=662385942]
@@ -59,10 +59,5 @@ shape = SubResource("CircleShape2D_5hvud")
 position = Vector2(0, 2)
 shape = SubResource("CapsuleShape2D_oybhc")
 
-[node name="attackSpeedEn" type="Timer" parent="." unique_id=49759813]
-
 [connection signal="body_entered" from="Sight" to="." method="_on_sight_body_entered"]
 [connection signal="body_exited" from="Sight" to="." method="_on_sight_body_exited"]
-[connection signal="body_entered" from="hitbox" to="." method="_on_hitbox_body_entered"]
-[connection signal="body_exited" from="hitbox" to="." method="_on_hitbox_body_exited"]
-[connection signal="timeout" from="attackSpeedEn" to="." method="_on_attack_speed_en_timeout"]

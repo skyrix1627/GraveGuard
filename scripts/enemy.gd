@@ -4,7 +4,7 @@ extends CharacterBody2D
 @export var strengthUp_prefab : PackedScene
 @export var rangeUp_prefab : PackedScene
 @onready var graveyard = get_tree().get_first_node_in_group("graveyard")
-@onready var attack_speed_en: Timer = $attackSpeedEn
+@onready var attack_speed_en: Timer = $attack_speed_en
 
 const 	KNOCKBACK_FORCE: int = 50
 
@@ -75,6 +75,7 @@ func _on_hitbox_body_entered(body: Node2D) -> void:
 		target_in_range = true
 		body.take_damage(Global.enemy_strength)
 		attack_speed_en.start()
+		print("test")
 		
 func _on_hitbox_body_exited(body: Node2D) -> void:
 	if body.name == "Player":

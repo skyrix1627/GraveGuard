@@ -1544,6 +1544,7 @@ vertical_alignment = 1
 [node name="ResetButton" type="Button" parent="deathScreen/ColorRect/VBoxContainer" unique_id=1030538569]
 layout_mode = 2
 text = "get back to work?"
+
 [node name="arena_zone" type="Node2D" parent="." unique_id=443555377]
 
 [node name="TopLeft (Enemy spawn)" type="Marker2D" parent="arena_zone" unique_id=1505434461]

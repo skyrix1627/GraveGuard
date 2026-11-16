@@ -1,5 +1,7 @@
 extends Node2D
 
+signal body_entered
+
 @export var enemy_prefab : PackedScene
 
 @onready var timer = $Timer
@@ -16,6 +18,9 @@ var enemies_spawned = 0
 func start_wave():
 	enemies_spawned = 0
 	timer.start()
+	
+func _on_body_entered(body):
+	body_entered.emit(body)
 
 func _on_timer_timeout() -> void:
 	if enemies_spawned < Global.wave:

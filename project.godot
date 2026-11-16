@@ -21,10 +21,6 @@ Global="*uid://btclcfykixxnu"
 DialogueManager="*uid://c3rodes2l3gxb"
 GameData="*uid://cf235650wecjx"
 
-[dialogue_manager]
-
-runtime/balloon_path="res://dialogue_balloon/balloon.tscn"
-
 [display]
 
 window/stretch/mode="canvas_items"

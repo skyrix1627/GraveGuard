@@ -1,21 +1,36 @@
 [gd_scene format=3 uid="uid://dmaaxy5gkqu70"]
 
 [ext_resource type="Script" uid="uid://c28xqoupp7q7j" path="res://scripts/strength_pickup.gd" id="1_4l7cs"]
-[ext_resource type="Texture2D" uid="uid://bh6yqpa5uw4yu" path="res://assets/sprites/evilTempPlayer.png" id="1_hs4t2"]
+[ext_resource type="Texture2D" uid="uid://dg532fhtppwlx" path="res://assets/sprites/potions.png" id="2_4l7cs"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_mbk7l"]
+atlas = ExtResource("2_4l7cs")
+region = Rect2(0, 0, 128, 128)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_irpdv"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_mbk7l")
+}],
+"loop": 1,
+"name": &"default",
+"speed": 5.0
+}]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_oybhc"]
-size = Vector2(4, 8)
+size = Vector2(8, 8)
 
 [node name="strengthPickup" type="Area2D" unique_id=1789995817]
 script = ExtResource("1_4l7cs")
 
-[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1173838700]
-position = Vector2(2.2500002, -4.0000005)
-scale = Vector2(0.09322035, 0.08333333)
-texture = ExtResource("1_hs4t2")
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1564879417]
+position = Vector2(4, -4)
+scale = Vector2(0.109375, 0.109375)
+sprite_frames = SubResource("SpriteFrames_irpdv")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=609525486]
-position = Vector2(2, -4)
+position = Vector2(4, -4)
 shape = SubResource("RectangleShape2D_oybhc")
 
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]

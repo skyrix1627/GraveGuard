@@ -1491,7 +1491,7 @@ shape = SubResource("CapsuleShape2D_gl52s")
 [node name="Player" parent="." unique_id=1489929400 instance=ExtResource("1_uwrxv")]
 z_index = 1
 y_sort_enabled = true
-position = Vector2(24, -312)
+position = Vector2(-295, -18)
 
 [node name="Camera2D" type="Camera2D" parent="Player" unique_id=740775175]
 zoom = Vector2(3, 3)
@@ -1506,15 +1506,15 @@ script = ExtResource("11_kvpfn")
 position = Vector2(-544, -792)
 
 [node name="strengthPickup" parent="." unique_id=1789995817 instance=ExtResource("13_kvuet")]
-position = Vector2(-190, -620)
+position = Vector2(569, -450)
 
 [node name="rangePickup" parent="." unique_id=2030020607 instance=ExtResource("14_trtic")]
-position = Vector2(-189, -581)
+position = Vector2(-538, -447)
 
 [node name="night_time_layer" parent="." unique_id=1629754551 instance=ExtResource("15_ir15t")]
 
 [node name="speedPickup2" parent="." unique_id=220274092 instance=ExtResource("16_ca42v")]
-position = Vector2(-157, -614)
+position = Vector2(-544, -761)
 
 [node name="deathScreen" type="CanvasLayer" parent="." unique_id=1013128574]
 visible = false

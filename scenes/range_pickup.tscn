@@ -1,21 +1,36 @@
 [gd_scene format=3 uid="uid://c7nys862ebqfw"]
 
 [ext_resource type="Script" uid="uid://55dnjec1h4fx" path="res://scripts/range_pickup.gd" id="1_piynj"]
-[ext_resource type="Texture2D" uid="uid://cmaw41snhavp" path="res://assets/sprites/Cashier.png" id="1_qx4yh"]
+[ext_resource type="Texture2D" uid="uid://dg532fhtppwlx" path="res://assets/sprites/potions.png" id="2_piynj"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_a6iip"]
+atlas = ExtResource("2_piynj")
+region = Rect2(0, 128, 128, 128)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_4i757"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_a6iip")
+}],
+"loop": 1,
+"name": &"default",
+"speed": 5.0
+}]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_4l7cs"]
-size = Vector2(5, 10)
+size = Vector2(9, 10)
 
 [node name="rangePickup" type="Area2D" unique_id=2030020607]
 script = ExtResource("1_piynj")
 
-[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1463886809]
-position = Vector2(2.374999, -5)
-scale = Vector2(0.08898309, 0.10416667)
-texture = ExtResource("1_qx4yh")
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=568659240]
+position = Vector2(3.9999998, -3.9999998)
+scale = Vector2(0.18749999, 0.18749999)
+sprite_frames = SubResource("SpriteFrames_4i757")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1355632987]
-position = Vector2(2.5, -5)
+position = Vector2(4.5, -5)
 shape = SubResource("RectangleShape2D_4l7cs")
 
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]

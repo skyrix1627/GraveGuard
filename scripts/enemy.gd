@@ -57,12 +57,14 @@ func loot_drop_calc():
 		var pickUp = pickUp_prefab.instantiate()
 		get_tree().current_scene.add_child(pickUp)
 		pickUp.global_position = global_position
-	elif drop_chance <= 0.10: #curently = to 10% (25% total)
+	elif drop_chance <= 0.20: #curently = to 10% (25% total)
 		var rangeUp = rangeUp_prefab.instantiate()
 		get_tree().current_scene.add_child(rangeUp)
 		rangeUp.global_position = global_position
 	elif drop_chance <= 0.79:
-		print("generic coin or somethin")
+		var player = get_tree().get_first_node_in_group("Player")
+		if player:
+			player.heal(3)
 
 
 func _on_sight_body_entered(body: Node2D) -> void:

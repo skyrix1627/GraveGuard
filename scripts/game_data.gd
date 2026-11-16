@@ -5,6 +5,7 @@ signal money_changed
 var in_dialogue := false
 var shop_open := false
 
+
 var money := 100:
 	set(value):
 		money = value
@@ -33,3 +34,9 @@ func open_shop() -> void:
 		shop_open = false
 		in_dialogue = false
 	)
+
+func reset() -> void:
+	money = 100
+	inventory = {}
+	in_dialogue = false
+	shop_open = false

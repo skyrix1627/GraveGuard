@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://2a350vfamexi"
-path="res://.godot/imported/playerAttackSide.png-f15b7ad5c3e49030fe364edeb845dbc2.ctex"
+uid="uid://dy35j28detid2"
+path="res://.godot/imported/playerAttackSideLeft.png-8282955c98367fb655a6eb2ee5739448.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/sprites/playerAttackSide.png"
-dest_files=["res://.godot/imported/playerAttackSide.png-f15b7ad5c3e49030fe364edeb845dbc2.ctex"]
+source_file="res://assets/sprites/playerAttackSideLeft.png"
+dest_files=["res://.godot/imported/playerAttackSideLeft.png-8282955c98367fb655a6eb2ee5739448.ctex"]
 
 [params]
 

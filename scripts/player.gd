@@ -1,15 +1,20 @@
 extends CharacterBody2D
 
+signal died
+
 var last_direction: Vector2 = Vector2.RIGHT
 var is_attacking: bool = false
 var hitbox_offset: Vector2
-
+var alive: bool = true
+var max_health: int = 100
+var health: int = 100
 
 @onready var animated_sprite_2d: AnimatedSprite2D = $AnimatedSprite2D
 @onready var hit_box_baton: Area2D = $hitBoxBaton
 @onready var actionable_finder: Area2D = $Direction/ActionableFinder
 @onready var attack_range = $hitBoxBaton/CollisionShape2D
- 
+@onready var invincibility_frames: Timer = $invincibility_frames
+
 
 func _ready() -> void:
 	hitbox_offset = hit_box_baton.position
@@ -22,13 +27,13 @@ func _physics_process(_delta: float) -> void:
 		return
 		
 	hit_box_baton.monitoring = false
-	
-	if Input.is_action_just_pressed("attack") and not is_attacking:
-		attack()
-	
-	process_movement()
-	process_animation()
-	move_and_slide()
+	if alive:
+		if Input.is_action_just_pressed("attack") and not is_attacking:
+			attack()
+		
+		process_movement()
+		process_animation()
+		move_and_slide()
 	
 func process_movement() -> void:
 	
@@ -109,4 +114,19 @@ func update_hitbox_offset() -> void:
 func _on_hit_box_baton_body_entered(body: Node2D) -> void:
 	if is_attacking and body.is_in_group("enemies"):
 		body.take_damage(Global.player_strength, position)
+		
+func take_damage(amount: int) -> void:
+	if alive:
+		#if invincibility_frames.time_left > 0:
+			#return
+		health -= amount
+		print(health) 
+		if health <= 0:
+			die()
+		invincibility_frames.start()
+	
+func die() -> void:
+	print("die")
+	alive = false
+	died.emit()
 		

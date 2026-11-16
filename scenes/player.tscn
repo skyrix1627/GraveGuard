@@ -254,8 +254,7 @@ collision_mask = 16
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Direction/ActionableFinder" unique_id=945850594]
 shape = SubResource("CircleShape2D_gl52s")
 
-[node name="invincibility frames" type="Timer" parent="." unique_id=715663141]
-one_shot = true
+[node name="invincibility_frames" type="Timer" parent="." unique_id=466561913]
 
 [connection signal="animation_finished" from="AnimatedSprite2D" to="." method="_on_animated_sprite_2d_animation_finished"]
 [connection signal="body_entered" from="hitBoxBaton" to="." method="_on_hit_box_baton_body_entered"]

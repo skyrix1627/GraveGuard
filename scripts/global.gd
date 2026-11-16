@@ -1,6 +1,6 @@
 extends Node
 
-var player_speed: int = 100
+var player_speed: int = 125
 var player_strength: int = 25
 var enemy_speed: int = 100
 var enemy_strength: int = 10 + wave_multiplier

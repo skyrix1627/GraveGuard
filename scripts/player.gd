@@ -107,6 +107,6 @@ func update_hitbox_offset() -> void:
 			hit_box_baton.position = Vector2(-y, x)
 			
 func _on_hit_box_baton_body_entered(body: Node2D) -> void:
-	if is_attacking and body.name.begins_with("Enemy"):
+	if is_attacking and body.is_in_group("enemies"):
 		body.take_damage(Global.player_strength, position)
 		

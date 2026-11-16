@@ -75,6 +75,12 @@ func play_animation(prefix: String, dir: Vector2) -> void:
 		animated_sprite_2d.play(prefix + "_up")
 
 
+func heal(amount: int) -> void:
+	if alive:
+		health = min(health + amount, max_health)
+		print(health)
+
+
 func attack() -> void:
 	is_attacking = true
 	hit_box_baton.monitoring = true
@@ -129,4 +135,29 @@ func die() -> void:
 	print("die")
 	alive = false
 	died.emit()
-		
+	show_death_screen()
+
+func show_death_screen() -> void:
+	var screen: CanvasLayer = get_tree().current_scene.get_node("deathScreen")
+	screen.process_mode = Node.PROCESS_MODE_ALWAYS
+	
+	#re centering buttons cuz doing it in the node did not work, jolly
+	var vbox: VBoxContainer = screen.get_node("ColorRect/VBoxContainer")
+	vbox.set_anchors_and_offsets_preset(Control.PRESET_FULL_RECT)
+	vbox.alignment = BoxContainer.ALIGNMENT_CENTER
+	
+	var button: Button = vbox.get_node("ResetButton")
+	button.size_flags_horizontal = Control.SIZE_SHRINK_CENTER
+	if not button.pressed.is_connected(_on_reset_pressed):
+		button.pressed.connect(_on_reset_pressed)
+	
+	screen.visible = true
+	get_tree().paused = true
+	button.grab_focus()
+
+func _on_reset_pressed() -> void:
+	reset_range()
+	Global.reset()
+	GameData.reset()
+	get_tree().paused = false
+	get_tree().reload_current_scene()

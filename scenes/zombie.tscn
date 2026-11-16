@@ -27,7 +27,7 @@ radius = 8.0
 [sub_resource type="CircleShape2D" id="CircleShape2D_xepks"]
 radius = 69.0
 
-[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_4gx57"]
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_ycv6i"]
 radius = 6.0
 height = 16.0
 
@@ -51,10 +51,13 @@ shape = SubResource("CircleShape2D_httt1")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Sight" unique_id=195040779]
 shape = SubResource("CircleShape2D_xepks")
 
-[node name="hitbox" type="Area2D" parent="." unique_id=1161907039]
+[node name="hitbox" type="Area2D" parent="." unique_id=1026049397]
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="hitbox" unique_id=2111958749]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="hitbox" unique_id=1314563339]
 position = Vector2(0, 2)
-shape = SubResource("CapsuleShape2D_4gx57")
+shape = SubResource("CapsuleShape2D_ycv6i")
+
+[node name="attack_speed_en" type="Timer" parent="." unique_id=1769372651]
+one_shot = true
 
 [connection signal="body_entered" from="Sight" to="." method="_on_sight_body_entered"]

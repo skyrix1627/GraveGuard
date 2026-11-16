@@ -1079,3 +1079,32 @@ position = Vector2(-189, -581)
 
 [node name="speedPickup2" parent="." unique_id=220274092 instance=ExtResource("16_ca42v")]
 position = Vector2(-157, -614)
+
+[node name="deathScreen" type="CanvasLayer" parent="." unique_id=1013128574]
+visible = false
+
+[node name="ColorRect" type="ColorRect" parent="deathScreen" unique_id=21514913]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.055634707, 2.4253387e-08, 6.016344e-09, 0.84313726)
+
+[node name="VBoxContainer" type="VBoxContainer" parent="deathScreen/ColorRect" unique_id=1933635360]
+layout_mode = 0
+offset_right = 66.0
+offset_bottom = 72.0
+theme_override_constants/separation = 20
+alignment = 1
+
+[node name="Label" type="Label" parent="deathScreen/ColorRect/VBoxContainer" unique_id=1906694901]
+layout_mode = 2
+theme_override_font_sizes/font_size = 40
+text = "You hear sirens in the distance"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="ResetButton" type="Button" parent="deathScreen/ColorRect/VBoxContainer" unique_id=1030538569]
+layout_mode = 2
+text = "get back to work?"

@@ -8,6 +8,7 @@ var hitbox_offset: Vector2
 var alive: bool = true
 var max_health: int = 100
 var health: int = 100
+var health_bar: ProgressBar
 
 @onready var animated_sprite_2d: AnimatedSprite2D = $AnimatedSprite2D
 @onready var hit_box_baton: Area2D = $hitBoxBaton
@@ -18,6 +19,30 @@ var health: int = 100
 
 func _ready() -> void:
 	hitbox_offset = hit_box_baton.position
+
+	# --- health bar ---
+	var layer := CanvasLayer.new()
+	layer.layer = 5  # keeps it above the night-time overlay
+	add_child(layer)
+
+	health_bar = ProgressBar.new()
+	health_bar.max_value = max_health
+	health_bar.value = health
+	health_bar.custom_minimum_size = Vector2(200, 20)
+	health_bar.position = Vector2(16, 16)
+	health_bar.show_percentage = false
+
+	var fill := StyleBoxFlat.new()
+	fill.bg_color = Color(0.8, 0.1, 0.1)
+	var back := StyleBoxFlat.new()
+	back.bg_color = Color(0.1, 0.1, 0.1, 0.8)
+	health_bar.add_theme_stylebox_override("fill", fill)
+	health_bar.add_theme_stylebox_override("background", back)
+	layer.add_child(health_bar)
+
+func _process(_delta: float) -> void:
+	health_bar.max_value = max_health
+	health_bar.value = health
 
 func _physics_process(_delta: float) -> void:
 	if GameData.in_dialogue:

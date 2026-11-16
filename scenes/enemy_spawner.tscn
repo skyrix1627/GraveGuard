@@ -3,6 +3,9 @@
 [ext_resource type="Script" uid="uid://xnabchuro24t" path="res://scripts/enemy_spawner.gd" id="1_00s5r"]
 [ext_resource type="PackedScene" uid="uid://cmvmoocc053g4" path="res://scenes/enemy.tscn" id="2_63vqd"]
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_devoi"]
+size = Vector2(1209, 370.5)
+
 [node name="enemy_spawner" type="Node2D" unique_id=1921807385]
 script = ExtResource("1_00s5r")
 enemy_prefab = ExtResource("2_63vqd")
@@ -11,4 +14,11 @@ enemy_prefab = ExtResource("2_63vqd")
 wait_time = 6.0
 autostart = true
 
+[node name="start_zone" type="Area2D" parent="." unique_id=2013950197]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="start_zone" unique_id=1853245850]
+position = Vector2(605, 185)
+shape = SubResource("RectangleShape2D_devoi")
+
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
+[connection signal="body_entered" from="start_zone" to="." method="_on_start_zone_body_entered"]

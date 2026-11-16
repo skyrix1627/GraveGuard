@@ -1,5 +1,6 @@
 [gd_scene format=3 uid="uid://dvlip4jt4knlc"]
 
+[ext_resource type="Script" uid="uid://ybkw1m8akwk7" path="res://scripts/player.gd" id="1_qhqgy"]
 [ext_resource type="Texture2D" uid="uid://cj86knwdgdrek" path="res://assets/sprites/player.png" id="2_qhqgy"]
 [ext_resource type="Texture2D" uid="uid://bh6yqpa5uw4yu" path="res://assets/sprites/evilTempPlayer.png" id="4_dqkch"]
 
@@ -356,7 +357,7 @@ radius = 22.022715
 
 [node name="Player" type="CharacterBody2D" unique_id=1489929400 groups=["Player"]]
 position = Vector2(6, -10)
-script = SubResource("GDScript_g2els")
+script = ExtResource("1_qhqgy")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1978964934]
 position = Vector2(0, 5)

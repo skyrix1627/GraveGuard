@@ -61,3 +61,6 @@ shape = SubResource("CapsuleShape2D_ycv6i")
 one_shot = true
 
 [connection signal="body_entered" from="Sight" to="." method="_on_sight_body_entered"]
+[connection signal="body_entered" from="hitbox" to="." method="_on_hitbox_body_entered"]
+[connection signal="body_exited" from="hitbox" to="." method="_on_hitbox_body_exited"]
+[connection signal="timeout" from="attack_speed_en" to="." method="_on_attack_speed_en_timeout"]
